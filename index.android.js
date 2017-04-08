@@ -4,42 +4,57 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  ScrollView,
+  Button,
+  TouchableOpacity
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import { Icon } from 'react-native-vector-icons/FontAwesome'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-export default class DailyReadings extends Component {
-  static navigationOptions = {
-    title: 'Readings For...',
-    header: {
-      right: <Button title="Settings" />,
-      left: <Button title="Menu" />,
-    },
-  }
-  
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+const MainNavigation = ({ navigation }) => (
+  <ScrollView style={styles.container}>
+    <Text>Hello World!</Text>
+  </ScrollView>
+);
+
+const ReadingsScene = ({ navigation }) => (
+  <MainNavigation
+    navigation={navigation}
+  />
+);
+
+ReadingsScene.navgationOptions = {
+  title: 'Readings: ',
+  header: {
+    right: (
+      <TouchableOpacity onPress={() => {navigate('SettingsScene')} } >
+        <MaterialIcons name={'settings'} size={26} />
+      </TouchableOpacity>
+    ),
+    left: (
+      <TouchableOpacity onPress={() => {navigate('CalendarScene')} } >
+        <MaterialIcons name={'event'} size={26} />
+      </TouchableOpacity>
+    ),
+  },
+};
+
+const CalendarScene = ({ navigation }) => (
+  <MainNavigation
+    navigation={navigation}
+  />
+);
+
+const SettingsScene = ({ navigation }) => (
+  <MainNavigation
+    navigation={navigation}
+  />
+);
 
 const AppStack = StackNavigator({
   Readings: {
@@ -72,4 +87,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('DailyReadings', () => DailyReadings);
+export default AppStack;
