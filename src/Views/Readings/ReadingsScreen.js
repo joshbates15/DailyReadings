@@ -21,8 +21,7 @@ export default class HomeScreen extends Component {
                 color: '#ff0000',
                 textAlign: 'center',
                 fontWeight: '500',
-                marginLeft: 'auto',
-                marginRight: 'auto',
+                alignSelf: 'center',
             },
             right: (
                 <TouchableOpacity style={styles.settingsIcon} onPress={() => { navigation.navigate('SettingsScreen') }} >

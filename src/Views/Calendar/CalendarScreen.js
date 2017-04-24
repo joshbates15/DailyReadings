@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
     StyleSheet,
-    Text,
     Button,
     View
 } from 'react-native';
@@ -32,15 +31,13 @@ export default class CalendarScreen extends Component {
         title: 'Choose Date',
         header: (navigation) => ({
             titleStyle: {
-                marginLeft: 'auto',
-                marginRight: 'auto',
+                alignSelf: 'center',
                 color: '#ff0000',
             },
             right: (<Button style={styles.todayButton} title="Today" onPress={() => { alert(Moment().format('MMMM D')) }} />),
         }),
     };
     render() {
-        let todayD = () => { this.setTodaySelectedDate() };
         return (
             <View>
                 <Calendar
@@ -60,8 +57,6 @@ export default class CalendarScreen extends Component {
                         weekendHeading: { color: '#aa3333' }
                     }}
                 />
-                <Text>Selected Date: {Moment(this.state.selectedDate).format('MMMM D')}</Text>
-                <Button style={styles.todayButton} title="Today" onPress={todayD} />
             </View>
         );
     }

@@ -22,7 +22,7 @@ const DailyReadings = StackNavigator({
 }, { initialRouteName: 'Home', initialRouteParams: { theDate: Moment().format() } });
 
 const styles = StyleSheet.create({
-    // Styles Here
+    //Stylesheet
 });
 
 AppRegistry.registerComponent('DailyReadings', () => DailyReadings);

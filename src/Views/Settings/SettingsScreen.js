@@ -8,6 +8,12 @@ import {
 export default class SettingsScreen extends Component {
     static navigationOptions = {
         title: 'Settings',
+        header: (navigation) => ({
+            titleStyle: {
+                alignSelf: 'center',
+                color: '#ff0000',
+            },
+        }),
     };
     render() {
         return (
