@@ -14,27 +14,26 @@ export default class HomeScreen extends Component {
         this.state = {};
     }
 
-    static navigationOptions = {
-        title: (navigation) => (`Readings for: ${Moment(navigation.state.params.theDate).format("MMMM D")}`),
-        header: (navigation) => ({
-            titleStyle: {
-                color: '#ff0000',
-                textAlign: 'center',
-                fontWeight: '500',
-                alignSelf: 'center',
-            },
-            right: (
-                <TouchableOpacity style={styles.settingsIcon} onPress={() => { navigation.navigate('SettingsScreen') }} >
-                    <MaterialIcons name="settings" size={24} />
-                </TouchableOpacity>
-            ),
-            left: (
-                <TouchableOpacity style={styles.calendarIcon} onPress={() => { navigation.navigate('CalendarScreen') }} >
-                    <MaterialIcons name={'date-range'} size={26} />
-                </TouchableOpacity>
-            ),
-        }),
-    };
+    static navigationOptions = ({ navigation }) => ({
+        title: `Readings for: ${Moment(navigation.state.params.theDate).format("MMMM D")}`,
+        headerTitleStyle: {
+            color: '#ff0000',
+            textAlign: 'center',
+            fontWeight: '500',
+            fontSize: 18,
+            alignSelf: 'center',
+        },
+        headerRight: (
+            <TouchableOpacity style={styles.settingsIcon} onPress={() => { navigation.navigate('SettingsScreen') }} >
+                <MaterialIcons name="settings" size={24} />
+            </TouchableOpacity>
+        ),
+        headerLeft: (
+            <TouchableOpacity style={styles.calendarIcon} onPress={() => { navigation.navigate('CalendarScreen') }} >
+                <MaterialIcons name={'date-range'} size={26} />
+            </TouchableOpacity>
+        ),
+    });
 
     render() {
         //console.log(this.props)

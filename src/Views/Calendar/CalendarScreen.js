@@ -27,16 +27,14 @@ export default class CalendarScreen extends Component {
         this.props.navigation.navigate('Home', { theDate: theSelectedDate });
         //this.props.navigation.state.params.theDate
     }
-    static navigationOptions = {
+    static navigationOptions = ({ navigation }) => ({
         title: 'Choose Date',
-        header: (navigation) => ({
-            titleStyle: {
-                alignSelf: 'center',
-                color: '#ff0000',
-            },
-            right: (<Button style={styles.todayButton} title="Today" onPress={() => { alert(Moment().format('MMMM D')) }} />),
-        }),
-    };
+        headerTitleStyle: {
+            alignSelf: 'center',
+            color: '#ff0000',
+        },
+        headerRight: (<Button style={styles.todayButton} title="Today" onPress={() => { alert(Moment().format('MMMM D')) }} />),
+    });
     render() {
         return (
             <View>

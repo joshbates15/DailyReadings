@@ -6,19 +6,17 @@ import {
 } from 'react-native';
 
 export default class SettingsScreen extends Component {
-    static navigationOptions = {
+    static navigationOptions = ({ navigation }) => ({
         title: 'Settings',
-        header: (navigation) => ({
-            titleStyle: {
-                alignSelf: 'center',
-                color: '#ff0000',
-            },
-        }),
-    };
+        headerTitleStyle: {
+            alignSelf: 'center',
+            color: '#ff0000',
+        },
+    });
     render() {
         return (
             <View>
-                <Button title="Clear Progress" />
+                <Button title="Clear Progress" onPress={() => {alert('Not working yet...')}} />
             </View>
         )
     }
