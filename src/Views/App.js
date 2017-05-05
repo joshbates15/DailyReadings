@@ -21,7 +21,7 @@ const DailyReadings = StackNavigator({
     SettingsScreen: { screen: SettingsScreen },
     CalendarScreen: { screen: CalendarScreen },
     ChapterScreen: {screen: ChapterScreen},
-}, { initialRouteName: 'Home', initialRouteParams: { theDate: Moment().format() } });
+}, { initialRouteName: 'Home', initialRouteParams: { theDate: Moment().format(), book: '', chapter: '' } });
 
 const styles = StyleSheet.create({
     //Stylesheet

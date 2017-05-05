@@ -1,45 +1,30 @@
 import React, { Component } from 'react';
 import {
     StyleSheet,
-    View
+    View,
+    Button
 } from 'react-native';
 import Moment from 'moment';
 import ReadingsData from '../../Assets/readings.json';
 import PortionItem from './PortionItem';
 
 export default class PortionList extends Component {
-    //
     constructor(props) {
         super(props);
-        this.state = {
-            date: Moment().format(),
-        };
     }
 
     render() {
         return (
             <View style={styles.wrapper}>
                 {this.theReadings(this.props.date)}
+                {/* <Button title="Settings" onPress={() => this.props.screenProps.rootNav.navigate('ChapterScreen', {book: "Deuteronomy", chapter: "22"})} /> */}
             </View>
         );
     }
 
     theReadings(date) {
         let readings = [];
-        //if props.date (this.props.navigation.state.params.date) is not null then bind it to state.date
-        //propsDate = this.props.navigation.state.params.selectedDate;
-        /*
-        if (propsDate != null) {
-          this.setState({date: propsDate});
-        } 
-        
-        if (this.props.navigation.state.params) {
-          this.setState({date: this.props.navigation.state.params.theDate});
-        }
-        */
-        //let propsDate = this.props.navigation.state.params.theDate;
-        //this.setState({date: propsDate});
-        //let theDate = this.state.date;
+        let navigation = this.props.screenProps.rootNav;
         let theDate = date;
         let theMonth = Moment(theDate).format('M');
         let theDay = Moment(theDate).format('D');
@@ -50,7 +35,7 @@ export default class PortionList extends Component {
             let portion = readingPortion.portion;
             let book = readingPortion.book;
             let chapter = readingPortion.chapter;
-            return <PortionItem portion={portion} book={book} chapter={chapter} />
+            return <PortionItem portion={portion} book={book} chapter={chapter} screenProps={{rootNav: navigation}} />
         })
     }
 }

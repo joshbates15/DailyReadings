@@ -6,12 +6,17 @@ export default class PortionItem extends Component {
     super(props);
   }
   render() {
+    /*
+          this.props.navigation.navigate('ChapterScreen', {
+            book: this.props.book,
+            chapter: this.props.chapter
+          })
+    */
     //console.log(this.props);
     return (
       <TouchableOpacity
         style={styles.button}
-        onPress={() =>
-          this.props.navigation.navigate('ChapterScreen', {
+        onPress={() => this.props.screenProps.rootNav.navigate('ChapterScreen', {
             book: this.props.book,
             chapter: this.props.chapter
           })}

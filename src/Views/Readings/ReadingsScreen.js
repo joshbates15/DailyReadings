@@ -36,10 +36,10 @@ export default class HomeScreen extends Component {
     });
 
     render() {
-        //console.log(this.props)
+        //console.log(this.props);
         const theDate = this.getTheDate();
         return (
-            <PortionList date={theDate} />
+            <PortionList date={theDate} screenProps={{ rootNav: this.props.navigation }} />
         );
     }
 

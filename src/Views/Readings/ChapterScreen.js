@@ -9,17 +9,14 @@ import KJV from '../../Assets/en_kjv.json';
 export default class ChapterScreen extends Component {
   constructor(props) {
         super(props);
-        this.state = {};
     }
 
     static navigationOptions = ({ navigation }) => ({
         title: `${navigation.state.params.book} ${navigation.state.params.chapter}`,
         headerTitleStyle: {
             color: '#ff0000',
-            textAlign: 'center',
             fontWeight: '500',
             fontSize: 18,
-            alignSelf: 'center',
         },
     });
   
