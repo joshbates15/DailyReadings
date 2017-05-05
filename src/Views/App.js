@@ -14,11 +14,13 @@ import Moment from 'moment';
 import HomeScreen from './Readings/ReadingsScreen';
 import CalendarScreen from './Calendar/CalendarScreen';
 import SettingsScreen from './Settings/SettingsScreen';
+import ChapterScreen from './Readings/ChapterScreen';
 
 const DailyReadings = StackNavigator({
     Home: { screen: HomeScreen },
     SettingsScreen: { screen: SettingsScreen },
     CalendarScreen: { screen: CalendarScreen },
+    ChapterScreen: {screen: ChapterScreen},
 }, { initialRouteName: 'Home', initialRouteParams: { theDate: Moment().format() } });
 
 const styles = StyleSheet.create({
