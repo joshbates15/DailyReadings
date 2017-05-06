@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, Dimensions } from "react-native";
+import { responsiveHeight, responsiveWidth, responsiveFontSize } from '../../Components/ResponsiveSizes/ResponsiveSizes';
+
 
 export default class PortionItem extends Component {
   constructor(props) {
@@ -39,13 +41,13 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2
   },
   portion: {
-    fontSize: 12,
+    fontSize: responsiveFontSize(16),
     textAlign: "left",
     marginTop: 10,
     marginBottom: 10
   },
   reading: {
-    fontSize: 24,
+    fontSize: responsiveFontSize(28),
     textAlign: "left",
     color: "#333333",
     marginBottom: 5

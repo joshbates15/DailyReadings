@@ -4,6 +4,7 @@ import {
     View,
     Button
 } from 'react-native';
+import { responsiveHeight, responsiveWidth, responsiveFontSize } from '../../Components/ResponsiveSizes/ResponsiveSizes';
 
 export default class SettingsScreen extends Component {
     static navigationOptions = ({ navigation }) => ({
@@ -11,6 +12,7 @@ export default class SettingsScreen extends Component {
         headerTitleStyle: {
             alignSelf: 'center',
             color: '#ff0000',
+            fontSize: responsiveFontSize(24),
         },
     });
     render() {

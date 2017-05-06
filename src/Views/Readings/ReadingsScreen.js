@@ -3,6 +3,7 @@ import {
     StyleSheet,
     TouchableOpacity
 } from 'react-native';
+import { responsiveHeight, responsiveWidth, responsiveFontSize } from '../../Components/ResponsiveSizes/ResponsiveSizes';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Moment from 'moment';
 import PortionList from './PortionList';
@@ -20,7 +21,7 @@ export default class HomeScreen extends Component {
             color: '#ff0000',
             textAlign: 'center',
             fontWeight: '500',
-            fontSize: 18,
+            fontSize: responsiveFontSize(19),
             alignSelf: 'center',
         },
         headerRight: (

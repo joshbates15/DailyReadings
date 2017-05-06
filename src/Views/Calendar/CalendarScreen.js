@@ -4,6 +4,7 @@ import {
     Button,
     View
 } from 'react-native';
+import { responsiveHeight, responsiveWidth, responsiveFontSize } from '../../Components/ResponsiveSizes/ResponsiveSizes';
 import Calendar from 'react-native-calendar';
 import Moment from 'moment';
 
@@ -23,15 +24,14 @@ export default class CalendarScreen extends Component {
     sendSelectedDate(date) {
         let theSelectedDate = date;
         this.setState({ selectedDate: theSelectedDate });
-        //this.props.navigation.setParams({theDate: theSelectedDate});
         this.props.navigation.navigate('Home', { theDate: theSelectedDate });
-        //this.props.navigation.state.params.theDate
     }
     static navigationOptions = ({ navigation }) => ({
         title: 'Choose Date',
         headerTitleStyle: {
             alignSelf: 'center',
             color: '#ff0000',
+            fontSize: responsiveFontSize(24),
         },
         headerRight: (<Button style={styles.todayButton} title="Today" onPress={() => { alert(Moment().format('MMMM D')) }} />),
     });
@@ -39,7 +39,6 @@ export default class CalendarScreen extends Component {
         return (
             <View>
                 <Calendar
-                    //onDateSelect={(date) => this.setState({ selectedDate: date })}
                     onDateSelect={(date) => this.sendSelectedDate(date)}
                     dayHeadings={['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']}
                     scrollEnabled={true}

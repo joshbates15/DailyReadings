@@ -4,6 +4,7 @@ import {
     View,
     Button
 } from 'react-native';
+import { responsiveHeight, responsiveWidth, responsiveFontSize } from '../../Components/ResponsiveSizes/ResponsiveSizes';
 import Moment from 'moment';
 import ReadingsData from '../../Assets/readings.json';
 import PortionItem from './PortionItem';
@@ -43,6 +44,6 @@ export default class PortionList extends Component {
 const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
-        marginBottom: 100,
+        marginBottom: responsiveHeight(20),
     },
 });
